@@ -19,6 +19,7 @@ function addTask(task) {
     var checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     checkBox.setAttribute("id", "task_" + count.toString());
+    checkBox.setAttribute("class", "checkbox");
     var label = document.createElement("label");
     label.setAttribute("for", "task_" + count.toString());
     var newTask = document.createTextNode(task);
@@ -65,3 +66,5 @@ form.addEventListener("submit", function(event){
     addTask(getTask());
     form.reset();
 });
+
+var checkbox
