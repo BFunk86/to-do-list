@@ -3,68 +3,51 @@
  *
  */
 
-/**
- * @author: Brandon Young
- *
- */
+// unordered list that holds the to-do's
+var ul = document.getElementById("list");
+// input box for new tasks
+var input = document.getElementById("task");
+// form holding input and submit button
+var form = document.getElementById('newTask');
 
 /**
  * The addTask method is used to add a new task to the To-do List
  * @param task: The task to add to the To-do list
  */
 function addTask(task) {
-    var taskList = document.getElementById("list");
-    var count = taskList.childNodes.length + 1;
-    var newNode = document.createElement("li");
+    // new li to put everything in
+    var li = document.createElement("li");
+    // Checkbox for checking item off
     var checkBox = document.createElement("input");
-    checkBox.setAttribute("type", "checkbox");
-    checkBox.setAttribute("id", "task_" + count.toString());
-    checkBox.setAttribute("class", "checkbox");
+    // label for task text
     var label = document.createElement("label");
-    label.setAttribute("for", "task_" + count.toString());
-    var newTask = document.createTextNode(task);
-    // add the new task to the label
-    label.appendChild(newTask);
-    newNode.appendChild(checkBox);
-    taskList.appendChild(newNode);
-    checkBox.insertAdjacentElement("afterend", label);
+    // button to remove task
+    var removeBtn = document.createElement("span");
+    // add remove class to button
+    removeBtn.setAttribute("class", "remove");
+    // Add text to remove button
+    removeBtn.innerHTML = "&times";
+    // add task to label element
+    label.innerHTML += task;
+    // set attributes for label element
+    label.setAttribute("class", "select");
+    // set attribute for checkbox
+    checkBox.setAttribute("type", "checkbox");
+    // add event handler to the remove button
+    removeBtn.addEventListener("click", function(){
+        li.style.display = "none";
+    });
+
+    // Build the new task
+    li.appendChild(checkBox);
+    li.appendChild(label);
+    li.appendChild(removeBtn);
+    ul.appendChild(li);
 } // end addTask
 
-/**
- * The getTask method gets the task from the input box
- * @returns {string|Number}: the task entered in the input box
- */
-function getTask() {
-    var task = document.getElementById("task").value;
-    return task;
-}
-
-function taskCount() {
-    var taskList = document.getElementById("list");
-    var count = 0;
-    for (var i = 0; i < taskList.childNodes.length; i++) {
-
-    }
-}
-
-/**
- * The removeTask method is used to remove a task from the To-do
- * list by adding a strikethrough to the task.
- * @param task: The task to add a strikethrough to
- */
-function removeTask(task) {
-    task.strike();
-} // end removeTask
-
-
-var form = document.getElementById('newTask');
-
-//form.onsubmit = function
-
+// Add event handler to add new tasks to the ul
 form.addEventListener("submit", function(event){
     event.preventDefault();
-    addTask(getTask());
+    addTask(input.value);
     form.reset();
 });
-
-var checkbox
