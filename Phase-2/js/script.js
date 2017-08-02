@@ -14,7 +14,7 @@
         this.checked = false;
         this.uncheck = function() {
             this.checked = false;
-        }
+        };
 
         this.check = function() {
             this.checked = true;
@@ -23,7 +23,7 @@
 
     Task.prototype.addTask = function() {
         list.innerHTML += "<li>" + "<input type='checkbox'>" +  this.task + "</li>";
-    }
+    };
 
     form.addEventListener("submit", function(e) {
         e.preventDefault();

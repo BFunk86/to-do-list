@@ -32,7 +32,7 @@ function addTask(task) {
     // Add pencil icon to edit button
     editBtn.innerHTML = "<span class='innerEdit'>&#x270F;</span>";
     // Add focus to task on edit button click and enable contenteditable
-    editBtn.addEventListener("click", function(){
+    editBtn.addEventListener("click", function () {
         label.setAttribute("contenteditable", "true");
         label.focus();
     });
@@ -40,7 +40,7 @@ function addTask(task) {
     wrapper.setAttribute("class", "taskWrapper");
 
     // Stop allowing editable task when click away
-    label.addEventListener("blur", function(){
+    label.addEventListener("blur", function () {
         label.setAttribute("contenteditable", "false");
     });
 
@@ -57,7 +57,7 @@ function addTask(task) {
     // set attribute for checkbox
     checkBox.setAttribute("type", "checkbox");
     // add event handler to the remove button
-    removeBtn.addEventListener("click", function(){
+    removeBtn.addEventListener("click", function () {
         li.style.display = "none";
     });
 
@@ -73,7 +73,7 @@ function addTask(task) {
 } // end addTask
 
 // Add event handler to add new tasks to the ul
-form.addEventListener("submit", function(event){
+form.addEventListener("submit", function (event) {
     event.preventDefault();
     addTask(input.value);
     form.reset();
