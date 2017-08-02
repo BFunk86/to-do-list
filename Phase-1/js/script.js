@@ -24,13 +24,13 @@ function addTask(task) {
     // wrapper for label and checkBox
     var wrapper = document.createElement("div");
     // button to remove task
-    var removeBtn = document.createElement("span");
+    var removeBtn = document.createElement("div");
     // button to edit a task
-    var editBtn = document.createElement("span");
+    var editBtn = document.createElement("div");
     // set the class for edit button
-    editBtn.setAttribute("class", "edit");
+    editBtn.setAttribute("class", "outerEdit");
     // Add pencil icon to edit button
-    editBtn.innerHTML = "&#x270F;";
+    editBtn.innerHTML = "<span class='innerEdit'>&#x270F;</span>";
     // Add focus to task on edit button click and enable contenteditable
     editBtn.addEventListener("click", function(){
         label.setAttribute("contenteditable", "true");
