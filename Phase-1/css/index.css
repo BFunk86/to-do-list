@@ -13,7 +13,7 @@ body {
 
 /* [Styles for the container around app] */
 div.container {
-    width: 50%;
+    width: 800px;
     margin: auto;
 }
 
@@ -30,6 +30,7 @@ h1 {
     margin-bottom: 50px;
 }
 
+/* Styles for the input box to enter tasks */
 input[type=text] {
     padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -53,6 +54,7 @@ input[type=text]:focus {
     outline: none;
 }
 
+/* ADD task button */
 button#submit {
     display: inline;
     padding: 7px 18px;
@@ -60,7 +62,6 @@ button#submit {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-
     color: rgba(0, 0, 0, .6);
     background-color: white;
     font-size: 1.25em;
@@ -76,6 +77,7 @@ ul#list {
     list-style-type: none;
 }
 
+/* styles for the li container around task, checkbox, edit and remove button */
 li {
     padding: 15px 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -83,27 +85,35 @@ li {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 5px;
+    display: -webkit-flex;
+    display: inline-flex;
+    line-height: 50px;
 }
 
 li:hover {
     box-shadow: .5px 3px 3px 0 rgba(0,0,0,0.24);
 }
 
+/* Styles for task and checkbox wrapper */
+.taskWrapper {
+    min-width: 600px;
+    display: flex;
+}
+
+/* Styles for the label containing the task */
 label {
-    /*font-size: 1.25em;*/
-    font-size: 1.25em;
-    display: inline;
+    font-size: 1.35em;
+    min-width: 600px;
+    max-width: 600px;
 }
 
 /* CheckBox Styles */
 input[type=checkbox] {
-    -ms-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    height: 10px;
+    min-width: 30px;
+    height: 30px;
     margin-right: 10px;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 /* Add strikethrough item when checked */
@@ -112,15 +122,33 @@ input[type=checkbox]:checked + label.select {
     color: rgba(0, 0, 0, 0.6);;
 }
 
-/* The Close Button */
+/* [The Edit Button] */
+.edit {
+    position: relative;
+    min-width: 50px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.edit:hover, .edit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for text when editing */
+[contenteditable="true"]:focus {
+    outline:none;
+}
+
+/* [The Close Button] */
 .remove {
     position: relative;
-    top: -3px;
+    min-width: 50px;
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
-    padding-right: 20px;
 }
 
 .remove:hover, .remove:focus {
