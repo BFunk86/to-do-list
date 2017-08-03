@@ -1,0 +1,164 @@
+/*
+    Author:   Brandon Young
+    Date: 07-30-2017
+    Filename: index.css
+*/
+
+/*  [Body tag styles] */
+body {
+    font-family: arial, sans-serif;
+    color: rgba(0, 0, 0, .6);
+}
+
+/* [Styles for the container around app] */
+div.container {
+    width: 800px;
+    margin: auto;
+}
+
+/* [Header Style] */
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: rgba(0, 0, 0, .65);
+}
+
+/* Styles for Input Box and Button */
+.inputWrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Styles for the input box to enter tasks */
+input[type=text] {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    transition: border 0.3s;
+    font-size: 1.25em;
+    height: 18px;
+    line-height: 20px;
+
+    color: rgba(0, 0, 0, .6);
+}
+
+input[type=text]:focus {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: .5px 3px 3px 0 rgba(0, 0, 0, 0.24);
+    outline: none;
+}
+
+/* ADD task button */
+button#submit {
+    display: inline;
+    padding: 7px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, .6);
+    background-color: white;
+    font-size: 1.25em;
+}
+
+button#submit:focus {
+    box-shadow: .5px 3px 3px 0 rgba(0, 0, 0, 0.24);
+    outline: none;
+}
+
+/* [To-do list] */
+ul#list {
+    list-style-type: none;
+}
+
+/* styles for the li container around task, checkbox, edit and remove button */
+li {
+    padding: 15px 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    display: -webkit-flex;
+    display: inline-flex;
+    line-height: 50px;
+}
+
+li:hover {
+    box-shadow: .5px 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Styles for task and checkbox wrapper */
+.taskWrapper {
+    min-width: 600px;
+    display: flex;
+}
+
+/* Styles for the label containing the task */
+label {
+    font-size: 1.35em;
+    min-width: 600px;
+    max-width: 600px;
+}
+
+/* CheckBox Styles */
+input[type=checkbox] {
+    min-width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+/* Add strikethrough item when checked */
+input[type=checkbox]:checked + label.select {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.6);;
+}
+
+/* [The Edit Button] */
+.outerEdit {
+    position: relative;
+    min-width: 50px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.outerEdit:hover, .outerEdit:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.innerEdit {
+    display: inline-block;
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+/* Styles for text when editing */
+[contenteditable="true"]:focus {
+    outline: none;
+}
+
+/* [The Close Button] */
+.remove {
+    position: relative;
+    min-width: 50px;
+    color: #aaa;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.remove:hover, .remove:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
