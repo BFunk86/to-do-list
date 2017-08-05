@@ -1,0 +1,157 @@
+/*
+    Author:   Brandon Young
+    Date: 07-30-2017
+    Filename: index.css
+*/
+
+/*  [Body tag styles] */
+body {
+    font-family: arial, sans-serif;
+    color: rgba(0, 0, 0, .6);
+}
+
+/* [Styles for the container around app] */
+div.container {
+    width: 800px;
+    margin: auto;
+}
+
+/* [Header Style] */
+h1 {
+    font-size: 3em;
+    text-align: left;
+    color: rgba(0, 0, 0, .65);
+}
+
+/* Styles for Input Box and Button */
+.inputWrapper {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+/* Styles for the input box to enter tasks */
+input[type=text] {
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    font-size: 1.25em;
+    line-height: 20px;
+    width: 80%;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+/* ADD task button styles */
+button#submit {
+    padding: 8px 42px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    background-color: #50B564;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* [To-do list] */
+
+/* Border around tasks area */
+#tasks {
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    min-height: 250px;
+}
+
+/* Style for Tasks header */
+#tasks >  h3 {
+    padding: 0;
+    margin: 0;
+    min-width: 600px;
+}
+
+/* Styles for the task */
+ul#list {
+    list-style-type: none;
+    margin-left: 10px;
+    padding-left: 0;
+}
+
+/* styles for the li container around task, checkbox, edit and remove button */
+li {
+    margin-top: 10px;
+    display: -webkit-flex;
+    display: inline-flex;
+    font-size: 1.25em;
+}
+
+/* Styles for task and checkbox wrapper */
+.taskWrapper {
+    min-width: 600px;
+    display: flex;
+}
+
+/* Styles for the label containing the task */
+label {
+    min-width: 600px;
+    max-width: 600px;
+}
+
+/* CheckBox Styles */
+input[type=checkbox] {
+    position: relative;
+    vertical-align: middle;
+    bottom: 4px;
+    height: 25px;
+    width: 25px;
+    margin-left: -10px;
+    margin-right: 30px;
+}
+
+/* Add strikethrough item when checked */
+input[type=checkbox]:checked + label.select {
+    text-decoration: line-through;
+}
+
+/* [The Edit Button] */
+.edit {
+    position: relative;
+    min-width: 45px;
+    color: #33CAFF;
+}
+
+.edit:hover, .edit:focus {
+    color: #219ac4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for text when editing */
+[contenteditable="true"]:focus {
+}
+
+.pipe {
+    position: relative;
+    min-width: 15px;
+    color: #33CAFF;
+}
+
+/* [The Close Button] */
+.remove {
+    position: relative;
+    min-width: 50px;
+    color: #33CAFF;
+}
+
+.remove:hover, .remove:focus {
+    color: #219ac4;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phase 1</title>
+    <title>Phase 3</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/vendors/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<header><h1>To-Do List</h1></header>
+<div class="container">
+    <div id="header">
+        <h1>To-Do List</h1>
+    </div>
+    <form action="#" method="post" id="newTask">
+        <div class="inputWrapper">
+            <input type="text" aria-label="To-do" name="task" id="task" placeholder="To-do" autofocus>
+            <button type="submit" id="submit">ADD</button>
+        </div>
+    </form>
+    <div id="tasks">
+        <h3>Tasks:</h3>
+        <ul id="list"></ul>
+    </div>
+
+
+</div>
+
 <script src="js/script.js"></script>
 </body>
 </html>

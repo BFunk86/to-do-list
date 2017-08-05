@@ -1,70 +1,59 @@
-function Todo(task) {
-    // The task to be added to the Todo
-    this.task = task;
-    // This keeps track of whether or not the task is completed
-    this.checked = false;
-    this.uncheck = function() {
-        this.checked = false;
-    };
-    this.check = function() {
-        this.checked = true;
-    };
-};
-
 /**
- * The buildHTML element builds the html for the task and puts everything in a li tag.
- * @returns {Element} li: An li tag containing the new task, checkbox, and buttons for remove and edit
+ * @author: Brandon Young
+ *
  */
-Todo.prototype.buildHTML = function() {
-    // li to hold everything
-    var li = $("<li></li>");
-    // add checkbox and label for task
-    li.append('<div class="taskWrapper"><input id="check" type="checkbox"><label class="select" contenteditable="false">' + this.task + '</label></div>');
-    // add edit and remove button
-    li.append('<div class="outerEdit"><span class="innerEdit">✏</span></div><div class="remove">×</div>');
-    return li;
-};
+(function($) {
+    /**
+     * The newTask method builds the html for the task and puts everything inside an li tag.
+     * It also adds the event handlers for the edit and delete button.
+     * @returns {Element} li: An li tag containing the new task, checkbox, and buttons for remove and edit
+     */
+    var newTask = function (task) {
+        // li to hold everything
+        var li = $("<li></li>");
+        // The checkbox and todo label in a wrapper
+        var taskWrapper = $("<div class='taskWrapper'><input type='checkbox'><label class='select' contenteditable='false'>" + task + "</label></div>");
+        // edit button
+        var edit = $("<div class='edit'>edit</div>");
+        // add event handler to edit button
+        edit.on("click", function () {
+            // Get the corresponding label
+            var label = $(this).parent().find("label.select");
+            // set contenteditable to true
+            label.attr("contenteditable", "true").focus();
+            // Stop contenteditable on blur
+            label.on("blur", function () {
+                $(this).attr("contenteditable", false);
+            });
+        });
+        // pipe seperator
+        var pipe = $("<div class='pipe'> | </div>");
+        // delete button
+        var remove = $("<div class='remove'>delete</div>");
+        // add event to handle removing the current task
+        remove.on("click", function() {
+            $(this).parent().remove();
+        })
 
+        li.append(taskWrapper);
+        li.append(edit);
+        li.append(pipe);
+        li.append(remove);
+        return li;
+    };
 
-$(document).ready(function() {
-    // List of ToDos
-    var list = [];
-    // incomplete that holds Todos not yet completed
-    var incomplete = $("#list");
-    // incomplete that holds completed Todos
-    var complete = $("#complete");
+    // The list that holds the Todos
+    var list = $("#list");
 
     // Check for form submit
-    $("#newTask").submit(function(e) {
+    $("#newTask").submit(function (e) {
         e.preventDefault();
         // get new task
         var task = $("#task").val();
-        // Create new Todo
-        var newTodo = new Todo(task);
         // Add Todo to list of Todos
-        list.push( newTodo );
-        display();
-        // Clear the input box
+        list.append(newTask(task));
+        // Clear the input box for new Todos
         this.reset();
     });
 
-    // display the tasks on screen
-    var display = function() {
-        // Empty both lists so they don't get doubled
-        incomplete.empty();
-        complete.empty();
-        // Loop through list of Todos and output to screen
-        $.each(list, function(i, val) {
-            if(val.checked === false){
-                incomplete.append(val.buildHTML());
-            } else {
-                complete.append(val.buildHTML());
-            }
-        });
-    };
-
-    $("#check").on("click", function() {
-        this.checked = true;
-        display();
-    });
-});
+})(jQuery);
