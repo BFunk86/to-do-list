@@ -133,10 +133,7 @@ input[type=checkbox]:checked + label.select {
     cursor: pointer;
 }
 
-/* Styles for text when editing */
-[contenteditable="true"]:focus {
-}
-
+/* Styles for pipe in between edit and delete */
 .pipe {
     position: relative;
     min-width: 15px;

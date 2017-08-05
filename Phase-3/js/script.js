@@ -12,7 +12,7 @@
         // li to hold everything
         var li = $("<li></li>");
         // The checkbox and todo label in a wrapper
-        var taskWrapper = $("<div class='taskWrapper'><input type='checkbox'><label class='select' contenteditable='false'>" + task + "</label></div>");
+        var taskWrapper = $("<div class='taskWrapper'><input type='checkbox'><label class='select strike' contenteditable='false'>" + task + "</label></div>");
         // edit button
         var edit = $("<div class='edit'>edit</div>");
         // add event handler to edit button
