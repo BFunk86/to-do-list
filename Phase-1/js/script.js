@@ -27,10 +27,16 @@ function addTask(task) {
     var removeBtn = document.createElement("div");
     // button to edit a task
     var editBtn = document.createElement("div");
+    // Create pipe to go in between edit and delete
+    var pipe = document.createElement("div");
+    // give class to pipe for styling
+    pipe.setAttribute("class", "pipe");
+    // Set text for pipe
+    pipe.innerHTML = " | ";
     // set the class for edit button
-    editBtn.setAttribute("class", "outerEdit");
+    editBtn.setAttribute("class", "edit");
     // Add pencil icon to edit button
-    editBtn.innerHTML = "<span class='innerEdit'>&#x270F;</span>";
+    editBtn.innerHTML = "edit";
     // Add focus to task on edit button click and enable contenteditable
     editBtn.addEventListener("click", function () {
         label.setAttribute("contenteditable", "true");
@@ -47,7 +53,7 @@ function addTask(task) {
     // add remove class to button
     removeBtn.setAttribute("class", "remove");
     // Add text to remove button
-    removeBtn.innerHTML = "&times";
+    removeBtn.innerHTML = "delete";
     // add task to label element
     label.innerHTML += task;
     // set attributes for label element
@@ -68,6 +74,7 @@ function addTask(task) {
     //li.appendChild(checkBox);
     //li.appendChild(label);
     li.appendChild(editBtn);
+    li.appendChild(pipe);
     li.appendChild(removeBtn);
     ul.appendChild(li);
 } // end addTask

@@ -19,78 +19,77 @@ div.container {
 /* [Header Style] */
 h1 {
     font-size: 3em;
-    text-align: center;
+    text-align: left;
     color: rgba(0, 0, 0, .65);
 }
 
 /* Styles for Input Box and Button */
 .inputWrapper {
-    text-align: center;
+    text-align: left;
     margin-bottom: 50px;
 }
 
 /* Styles for the input box to enter tasks */
 input[type=text] {
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.24);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 5px;
-    transition: border 0.3s;
     font-size: 1.25em;
-    height: 18px;
     line-height: 20px;
-
-    color: rgba(0, 0, 0, .6);
+    width: 80%;
 }
 
 input[type=text]:focus {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    box-shadow: .5px 3px 3px 0 rgba(0, 0, 0, 0.24);
     outline: none;
 }
 
-/* ADD task button */
+/* ADD task button styles */
 button#submit {
-    display: inline;
-    padding: 7px 18px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    color: rgba(0, 0, 0, .6);
-    background-color: white;
+    padding: 8px 42px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    background-color: #50B564;
     font-size: 1.25em;
-}
-
-button#submit:focus {
-    box-shadow: .5px 3px 3px 0 rgba(0, 0, 0, 0.24);
-    outline: none;
+    font-weight: bold;
 }
 
 /* [To-do list] */
+
+/* Border around tasks area */
+#tasks {
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    min-height: 250px;
+}
+
+/* Style for Tasks header */
+#tasks >  h3 {
+    padding: 0;
+    margin: 0;
+    min-width: 600px;
+}
+
+/* Styles for the task */
 ul#list {
     list-style-type: none;
+    margin-left: 10px;
+    padding-left: 0;
 }
 
 /* styles for the li container around task, checkbox, edit and remove button */
 li {
-    padding: 15px 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
     margin-top: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 5px;
     display: -webkit-flex;
     display: inline-flex;
-    line-height: 50px;
-}
-
-li:hover {
-    box-shadow: .5px 3px 3px 0 rgba(0, 0, 0, 0.24);
+    font-size: 1.25em;
 }
 
 /* Styles for task and checkbox wrapper */
@@ -101,46 +100,37 @@ li:hover {
 
 /* Styles for the label containing the task */
 label {
-    font-size: 1.35em;
     min-width: 600px;
     max-width: 600px;
 }
 
 /* CheckBox Styles */
 input[type=checkbox] {
-    min-width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
+    position: relative;
+    vertical-align: middle;
+    bottom: 4px;
+    height: 25px;
+    width: 25px;
+    margin-left: -10px;
+    margin-right: 30px;
 }
 
 /* Add strikethrough item when checked */
 input[type=checkbox]:checked + label.select {
     text-decoration: line-through;
-    color: rgba(0, 0, 0, 0.6);;
 }
 
 /* [The Edit Button] */
-.outerEdit {
+.edit {
     position: relative;
-    min-width: 50px;
-    color: #aaa;
-    font-size: 30px;
-    font-weight: bold;
+    min-width: 45px;
+    color: #33CAFF;
 }
 
-.outerEdit:hover, .outerEdit:focus {
-    color: black;
+.edit:hover, .edit:focus {
+    color: #219ac4;
     text-decoration: none;
     cursor: pointer;
-}
-
-.innerEdit {
-    display: inline-block;
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
 }
 
 /* Styles for text when editing */
@@ -148,17 +138,21 @@ input[type=checkbox]:checked + label.select {
     outline: none;
 }
 
+.pipe {
+    position: relative;
+    min-width: 15px;
+    color: #33CAFF;
+}
+
 /* [The Close Button] */
 .remove {
     position: relative;
     min-width: 50px;
-    color: #aaa;
-    font-size: 40px;
-    font-weight: bold;
+    color: #33CAFF;
 }
 
 .remove:hover, .remove:focus {
-    color: black;
+    color: #219ac4;
     text-decoration: none;
     cursor: pointer;
 }
