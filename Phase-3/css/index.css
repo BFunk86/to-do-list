@@ -64,8 +64,92 @@ button#submit {
     margin-bottom: 50px;
 }
 
+/* low priority button */
+#low + label{
+    min-width: 200px;
+
+    padding: 8px 52px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: green;
+}
+#low {
+    display: none;
+}
+
+/* Med priority button */
+#med+ label{
+    min-width: 200px;
+    padding: 8px 42px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: orange;
+}
+
+#med {
+    display: none;
+}
+
+/* high priority button */
+#high+ label{
+    min-width: 200px;
+    padding: 8px 52px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: red;
+}
+
+#high {
+    display: none;
+}
+
 
 /* [To-do list] */
+
+/* Priority Styles */
+/* Low priority styles */
+.low {
+    border-right: solid 8px green;
+}
+
+/* Medium priority Tasks */
+.med {
+    border-right: solid 8px orange;
+}
+
+/* High priority tasks */
+.high {
+    border-right: solid 8px red;
+}
+
+/* Style for selected priority buttons and hover */
+input[type="radio"]:checked + label {
+    box-shadow: 2px 2px 30px 20px rgba(0, 0, 0, 0.24) inset;
+}
+
+input[type="radio"]:hover + label {
+    box-shadow: 2px 2px 30px 20px rgba(0, 0, 0, 0.24) inset;
+}
+
+/* Add hover style to all buttons */
+button:hover {
+    box-shadow: 2px 2px 30px 20px rgba(0, 0, 0, 0.24) inset;
+}
 
 /* Border around tasks area */
 #tasks {
@@ -84,6 +168,21 @@ button#submit {
     min-width: 600px;
 }
 
+/* Style for clear button */
+#clear {
+    float: right;
+    margin-top: -20px;
+    padding: 8px 42px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    background-color: red;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
 /* Styles for the task */
 ul#list {
     list-style-type: none;
@@ -97,6 +196,7 @@ li {
     display: -webkit-flex;
     display: inline-flex;
     font-size: 1.25em;
+    padding-right: 10px;
 }
 
 /* Styles for task and checkbox wrapper */

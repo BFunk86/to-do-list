@@ -8,9 +8,11 @@
      * It also adds the event handlers for the edit and delete button.
      * @returns {Element} li: An li tag containing the new task, checkbox, and buttons for remove and edit
      */
-    var newTask = function (task) {
+    var newTask = function (task, priority) {
         // li to hold everything
         var li = $("<li></li>");
+        // Set class equal to the given task priority
+        li.attr("class", priority);
         // The checkbox and todo label in a wrapper
         var taskWrapper = $("<div class='taskWrapper'><input type='checkbox'><label class='select strike' contenteditable='false'>" + task + "</label></div>");
         // edit button
@@ -50,10 +52,16 @@
         e.preventDefault();
         // get new task
         var task = $("#task").val();
+        // Get priority
+        var priority = $("input[name=priority]:checked").val();
         // Add Todo to list of Todos
-        list.append(newTask(task));
+        list.append(newTask(task, priority));
         // Clear the input box for new Todos
         this.reset();
     });
+
+    $("#clear").on("click", function() {
+        $("input[type=checkbox]:checked").parent().parent().remove();
+    })
 
 })(jQuery);
