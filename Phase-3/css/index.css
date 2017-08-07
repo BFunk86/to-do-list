@@ -222,20 +222,10 @@ input[type=checkbox] {
     margin-right: 30px;
 }
 
-input[type=checkbox] + label.select {
-    -webkit-transition: text-decoration 2s;
-    -moz-transition: text-decoration 2s;
-    -ms-transition: text-decoration 2s;
-    -o-transition: text-decoration 2s;
-    transition: text-decoration 2s;
-}
-
 /* Add strikethrough item when checked */
 input[type=checkbox]:checked + label.select {
     text-decoration: line-through;
 }
-
-/* Animate Strikethrough */
 
 /* [The Edit Button] */
 .edit {

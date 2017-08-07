@@ -14,7 +14,7 @@
         // Set class equal to the given task priority
         li.attr("class", priority);
         // The checkbox and todo label in a wrapper
-        var taskWrapper = $("<div class='taskWrapper'><input type='checkbox'><label class='select strike' contenteditable='false'>" + task + "</label></div>");
+        var taskWrapper = $("<div class='taskWrapper'><input type='checkbox'><label class='select strike' contenteditable='false'>" + task + "</div>");
         // edit button
         var edit = $("<div class='edit'>edit</div>");
         // add event handler to edit button
